@@ -19,13 +19,13 @@
 			$errors[] = 'Contact already exists!';
 		}
 		if($firstname == '') {
-			$errors[] = 'Firstname is blank!';
+			$errors[] = 'Firstname is required';
 		}
 		if($lastname == '') {
-			$errors[] = 'Lastname is blank!';
+			$errors[] = 'Lastname is required';
 		}
 		if($phone1 == '') {
-			$errors[] = 'Phone 1 is blank!';
+			$errors[] = 'Phone #1 is required';
 		}
 
 		if(count($errors) == 0) {
@@ -56,26 +56,31 @@
 		<div class="my-3 p-3 bg-white rounded shadow-sm">
 		    <div class="row">
 		        <div class="col-sm-12 col-md-12">
-							<?php // TODO: add the bootstrap alert box here
-									if(count($errors) > 0) {	?>
-									<ul>
-											<?php foreach($errors as $error) { ?>
-													<li> <?php echo $error; ?> </li>
-											<?php } ?>
-									</ul>
+							<?php if(count($errors) > 0) {	?>
+									<div class="alert alert-danger alert-dismissible fade show" role="alert">
+										<ul>
+												<?php foreach($errors as $error) { ?>
+														<li> <?php echo $error; ?> </li>
+												<?php } ?>
+										</ul>
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+
 							<?php }  ?>
-						<?php // TODO: Validate the add number form ?>
+
 						<form action="add_number.php" method="post">
 								<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-													<label for="firstname">Firstname</label>
+													<label for="firstname">Firstname <span style="color:red;">*</span></label>
 													<input type="text" name="firstname" id="firstname" placeholder="Firstname" class="form-control" />
 											</div>
 											</div>
 											<div class="col-md-6">
 											<div class="form-group">
-													<label for="lastname">Lastname</label>
+													<label for="lastname">Lastname <span style="color:red;">*</span></label>
 													<input type="text" name="lastname" id="lastname" placeholder="Lastname" class="form-control" />
 											</div>
 											</div>
@@ -84,7 +89,7 @@
 									<div class="row">
 									<div class="col-md-3">
 									<div class="form-group">
-											<label for="phone1">Phone #1</label>
+											<label for="phone1">Phone #1 <span style="color:red;">*</span></label>
 											<input type="text" name="phone1" id="phone1" placeholder="Phone #1" class="form-control" />
 									</div>
 									</div>

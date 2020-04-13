@@ -15,7 +15,7 @@ if (isset($_POST['login'])) {
 
     if (file_exists('users/' . $username . '.xml')) {
         $xml = new SimpleXMLElement('users/' . $username . '.xml', 0, true);
-        //print_r($xml);
+
         if ($password == $xml->password) {
 
             $_SESSION['username'] = $username;
@@ -50,10 +50,8 @@ if (isset($_POST['login'])) {
         </div>
         <input type="submit" name="login" id="login" class="btn btn-lg btn-primary btn-block" value="Sign in" />
     </form>
-    <?php include('inc/footer.php'); ?>
 </div>
 </div>
-
 <!-- //container -->
-</body>
-</html>
+
+<?php include('inc/footer.php'); ?>

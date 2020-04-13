@@ -4,6 +4,8 @@
         <span class="menu2"><lable> Users </lable></span>
         <div class="circles">
         <div class="table-responsive">
+        <?php // TODO: Shift this section to Register page and make the table datatable ?>
+        <?php // TODO: Add a delete button for the user to be deleted ?>
         <table class="table table-hover">
             <tr>
                 <th> Username </th>
