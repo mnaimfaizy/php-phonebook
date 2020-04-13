@@ -29,10 +29,15 @@
 <div class="my-3 p-3 bg-white rounded shadow-sm">
 		<div class="row">
 				<div class="col-sm-12 col-md-8">
-					<?php // TODO: Add the bootstrap Alert box
-						if($error) {
-							echo '<p> Some password do not match, please try again!</p>';
-						} ?>
+					<?php
+						if($error) { ?>
+							<div class="alert alert-warning alert-dismissible fade show" role="alert">
+								<strong>Error!</strong> Either Password do not match or Old Password is wrong, please try again.
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+						<?php } ?>
 
 						<form action="change_password.php" method="post" class="form">
 							<div class="form-group">

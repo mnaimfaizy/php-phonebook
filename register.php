@@ -1,9 +1,10 @@
+<?php include('inc/header.php'); ?>
+
 <?php
-	include('inc/header.php');
 
 	$errors = array();
 	if(isset($_POST['submit'])) {
-		$username = preg_replace('/[^A-Za-z]/','',$_POST['username']);
+		echo $username = preg_replace('/[^A-Za-z0-9]/','',$_POST['username']);
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 		$c_password = $_POST['c_password'];
@@ -28,57 +29,60 @@
 			$xml->addChild('password', md5($password));
 			$xml->addChild('email', $email);
 			$xml->asXML('users/'.$username.'.xml');
-			header("Location: login.php");
-			die;
+			echo '<script>alert("User registeration was successfull.");</script>';
 		}
 	}
 ?>
 
-</head>
-<body>
-	<!-- content-top -->
-	<div class="content-top">
-		<!-- container -->
-		<div class="container">
-			<div class="logo">
-				<a href="index.php">MNF Phone Book</a>
-			</div>
-			<div class="content">
-				<div class="header">
-					<?php include('inc/nav.php'); ?>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="content-grids">
-					<div class="col-md-8">
-							<div class="col-md-12 contact-info">
-								<div class="contact-grid">
-									<h3>Register</h3>
-                                    <?php if(count($errors) > 0) {	?>
-                                    	<ul>
-                                        	<?php foreach($errors as $error) { ?>
-                                            	<li> <?php echo $error; ?> </li>
-                                            <?php } ?>
-                                        </ul>
-                                    <?php } ?>
-									<form action="register.php" method="post">
-										<input type="text" class="email" placeholder="Username" required="required" name="username" id="username">
-										<input type="text" class="email" placeholder="E-mail" name="email" id="email" required="required" pattern="([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?">
-										<input type="password" placeholder="Password" name="password" id="password" required="required" pattern=".{6,}" title="Minimum 6 characters required" autocomplete="off">
-										<input type="password" placeholder="Password Again" name="c_password" id="c_password" required="required" pattern=".{6,}" title="Minimum 6 characters required" autocomplete="off">
-										<input type="submit" name="submit" id="submit" value="Sign Up">
-									</form>
-								</div>
-							</div>
+<?php include('inc/nav.php'); ?>
+
+<main role="main" class="container-fluid">
+
+<?php include('inc/breadcrumb.php'); ?>
+
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+		<div class="row">
+				<div class="col-sm-12 col-md-8">
+					<?php if(count($errors) > 0) {	?>
+						<div class="alert alert-danger alert-dismissible fade show" role="alert">
+							<ul>
+								<?php foreach($errors as $error) { ?>
+									<li> <?php echo $error; ?> </li>
+								<?php } ?>
+							</ul>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>				
+					<?php } ?>
+
+					<form action="register.php" method="post" class="form">
+						<div class="form-group">
+							<label for="username">Username</label>
+							<input type="text" class="form-control" placeholder="Username" required="required" name="username" id="username">
 						</div>
-					<div class="col-md-4 video-info">
-						<?php include('inc/users_list.php'); ?>
-					</div>
-                    <?php include('inc/footer.php'); ?>
+						<div class="form-group">
+							<label for="email">E-mail</label>
+							<input type="email" class="form-control" placeholder="E-mail" name="email" id="email" required="required" pattern="([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?">
+						</div>
+						<div class="form-group">
+							<label for="password">Password</label>
+							<input type="password" class="form-control" placeholder="Password" name="password" id="password" required="required" pattern=".{6,}" title="Minimum 6 characters required" autocomplete="off">
+						</div>
+						<div class="form-group">
+							<label for="c_password">Confirm Password</label>
+							<input type="password" class="form-control" placeholder="Password Again" name="c_password" id="c_password" required="required" pattern=".{6,}" title="Minimum 6 characters required" autocomplete="off">
+						</div>
+
+						<input type="submit" class="btn btn-primary btn-block btn-lg" name="submit" id="submit" value="Sign Up">
+					</form>
 				</div>
-			</div>
+				<div class="col-sm-12 col-md-4">
+					<?php include('inc/users_list.php'); ?>
+				</div>
 		</div>
-		<!-- //container -->
-	</div>
-	<!-- content-top -->
-</body>
-</html>
+</div>
+
+</main>
+
+<?php include('inc/footer.php'); ?>
