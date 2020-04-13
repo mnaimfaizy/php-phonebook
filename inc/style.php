@@ -15,6 +15,14 @@
 <!-- jQuery DataTable CSS -->
 <link rel="stylesheet" href="assets/DataTables/datatables.css" type="text/css" />
 
+<?php // We will check if the page is index.php and load the style
+      if(basename($_SERVER['PHP_SELF']) === 'index.php') { ?>
+        <!-- EVO Calendar CSS -->
+        <link rel="stylesheet" type="text/css" href="assets/event-calendar-evo/evo-calendar.css">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+<?php } ?>
+
 <style type="text/css">
 .circle {
 background-color: yellow;
