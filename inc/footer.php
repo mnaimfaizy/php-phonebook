@@ -57,8 +57,8 @@
 <script type="text/javascript">
 
     $(document).ready(function() {
-        $('#example').DataTable();
-    } );
+        $('#example').DataTable();    
+    });
 
 </script>
 <!--// DataTable JS -->
