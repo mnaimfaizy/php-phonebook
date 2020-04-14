@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+$page_name = basename($_SERVER['PHP_SELF']); 
+
 if (!isset($_SESSION['username']))
 {
     header("Location: login.php");
