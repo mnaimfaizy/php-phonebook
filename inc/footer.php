@@ -75,6 +75,22 @@
                 });
             }
         });
+
+        $('.delete_number').on('click', function(e) {
+            if(confirm('Are you sure to delete this number?')) {
+                var number = $(this).attr("id");
+                $.ajax({
+                    url: 'delete.php',
+                    data: { number: number },
+                    method: 'POST',
+                    cache: false,
+                    success: function(data) {
+                        <?php $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
+                        window.location.href = '<?php echo $current_url; ?>?res='+data;
+                    }
+                });
+            }
+        });
     });
 
 </script>

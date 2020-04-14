@@ -70,7 +70,7 @@
 																			<td>'.$xml->address.'</td>
 																			<td>'.$xml->organization.'</td>
 																			<td>'.$xml->email.'</td>
-																			<td><a href="delete.php?number='.$number.'"> X </a></td>
+																			<td><button class="btn btn-danger btn-sm delete_number" id="'.$number.'"> X </button></td>
 																		</tr>';
 																}
 															?>
