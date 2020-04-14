@@ -81,7 +81,7 @@
 						</div>
 						<div class="form-group">
 							<label for="email">E-mail</label>
-							<input type="email" class="form-control" placeholder="E-mail" name="email" id="email" required="required" pattern="([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?">
+							<input type="email" class="form-control" placeholder="E-mail" name="email" id="email" required="required" >
 						</div>
 						<div class="form-group">
 							<label for="password">Password</label>

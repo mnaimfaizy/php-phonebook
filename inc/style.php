@@ -1,7 +1,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="MNF Phone Book" />
+<meta name="keywords" content="PHP, Phone, Book, PhoneBook" />
+<meta name="keywords" content="PHP Phone Book" />
 
 <!-- bootstarp-css -->
 <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"  />
@@ -13,7 +14,7 @@
 <!--// css -->
 
 <!-- jQuery DataTable CSS -->
-<link rel="stylesheet" href="assets/DataTables/datatables.css" type="text/css" />
+<link rel="stylesheet" href="assets/DataTables/datatables.min.css" type="text/css" />
 
 <?php // We will check if the page is index.php and load the style
       if(basename($_SERVER['PHP_SELF']) === 'index.php') { ?>

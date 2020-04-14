@@ -6,7 +6,6 @@
 
 <script src="assets/js/jquery-3.4.1.slim.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/dashboard.js"></script>
 
 <?php // We will check if the page is index.php and load the script
       if(basename($_SERVER['PHP_SELF']) === 'index.php') { ?>
@@ -53,7 +52,7 @@
 <!-- /script-for-menu -->
 
 <!-- DataTable JS -->
-<script type="text/javascript" language="javascript" src="assets/DataTables/datatables.js"></script>
+<script type="text/javascript" language="javascript" src="assets/DataTables/datatables.min.js"></script>
 <script type="text/javascript">
 
     $(document).ready(function() {
