@@ -56,6 +56,24 @@
 						</div>				
 					<?php } ?>
 
+					<?php if(isset($_GET['msg'])) { 
+							if($_GET['msg'] === 'success') { ?>
+						<div class="alert alert-success alert-dismissible fade show" role="alert">
+							<strong>Success</strong> User deleted successfully.
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+					<?php	} elseif($_GET['msg'] === 'error') { ?>
+						<div class="alert alert-danger alert-dismissible fade show" role="alert">
+							<strong>Error</strong> Some error occured, please try again.
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+					<?php 	}
+					} ?>
+
 					<form action="register.php" method="post" class="form">
 						<div class="form-group">
 							<label for="username">Username</label>
@@ -74,7 +92,7 @@
 							<input type="password" class="form-control" placeholder="Password Again" name="c_password" id="c_password" required="required" pattern=".{6,}" title="Minimum 6 characters required" autocomplete="off">
 						</div>
 
-						<input type="submit" class="btn btn-primary btn-block btn-lg" name="submit" id="submit" value="Sign Up">
+						<input type="submit" class="btn btn-primary btn-block btn-lg" name="submit" id="submit" value="Regsiter User">
 					</form>
 				</div>
 				<div class="col-sm-12 col-md-6">

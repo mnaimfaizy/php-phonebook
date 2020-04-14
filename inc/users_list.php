@@ -20,7 +20,7 @@
                             <tr>
                                 <td>'.basename($file, '.xml').'</td>
                                 <td>'.$xml->email.'</td>
-                                <td>X</td>
+                                <td><button class="btn btn-danger btn-sm delete_user" id="'.basename($file).'">X</button></td>
                             </tr>';
                     }
                 ?>

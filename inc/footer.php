@@ -59,6 +59,22 @@
     $(document).ready(function() {
         $('#example').DataTable();  
         $('#users_table').DataTable();  
+
+        $('.delete_user').on('click', function(e) {
+            if(confirm('Are you sure to delete this user?')) {
+                var user_id = $(this).attr("id");
+                $.ajax({
+                    url: 'delete_user.php',
+                    data: { user_id: user_id },
+                    method: 'POST',
+                    cache: false,
+                    success: function(data) {
+                        <?php $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
+                        window.location.href = '<?php echo $current_url; ?>?msg='+data;
+                    }
+                });
+            }
+        });
     });
 
 </script>
