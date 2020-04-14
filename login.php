@@ -37,7 +37,7 @@ if (isset($_POST['login'])) {
     <?php } ?>
 
     <form class="form-signin" action="login.php" method="post">
-        <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <img class="mb-4" src="assets/images/logo.png" alt="" width="152" height="87">
         <h1 class="h3 mb-5 font-weight-normal">Please sign in</h1>
         <label for="username" class="sr-only">Username</label>
         <input type="text" id="username" name="username" class="form-control mb-2" placeholder="Username" required autofocus>
