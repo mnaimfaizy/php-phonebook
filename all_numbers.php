@@ -2,7 +2,6 @@
 
 <?php include('inc/nav.php'); ?>
 
-<?php // TODO: make the delete button ask able via jQuery ?>
 <main role="main" class="container-fluid">
 
 <?php include('inc/breadcrumb.php'); ?>
