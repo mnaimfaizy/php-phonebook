@@ -42,7 +42,7 @@
 
 <div class="my-3 p-3 bg-white rounded shadow-sm">
 		<div class="row">
-				<div class="col-sm-12 col-md-8">
+				<div class="col-sm-12 col-md-6">
 					<?php if(count($errors) > 0) {	?>
 						<div class="alert alert-danger alert-dismissible fade show" role="alert">
 							<ul>
@@ -77,7 +77,7 @@
 						<input type="submit" class="btn btn-primary btn-block btn-lg" name="submit" id="submit" value="Sign Up">
 					</form>
 				</div>
-				<div class="col-sm-12 col-md-4">
+				<div class="col-sm-12 col-md-6">
 					<?php include('inc/users_list.php'); ?>
 				</div>
 		</div>
