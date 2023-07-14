@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <?php include('inc/style.php'); ?>
-    <link href="assets/css/signin.css" rel="stylesheet" />
-</head>
-<body class="text-center bg-info text-white">
-
-<?php
-session_start();
+<?php session_start();
 $error = false;
 if (isset($_POST['login'])) {
     $username = preg_replace('/[^A-Za-z]/', '', $_POST['username']);
@@ -26,6 +17,13 @@ if (isset($_POST['login'])) {
     $error = true;
 }
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <?php include('inc/style.php'); ?>
+    <link href="assets/css/signin.css" rel="stylesheet" />
+</head>
+<body class="text-center bg-info text-white">
 
 <!-- container -->
 <div class="container">
@@ -50,6 +48,12 @@ if (isset($_POST['login'])) {
         </div>
         <input type="submit" name="login" id="login" class="btn btn-lg btn-primary btn-block" value="Sign in" />
     </form>
+
+    <div class="alert alert-info" id="alert">
+        You can use bellow credentials to login:
+        User: guest
+        Password: password
+    </div>
 </div>
 </div>
 <!-- //container -->

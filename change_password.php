@@ -1,25 +1,24 @@
-<?php include('inc/header.php'); ?>
-
-<?php
-	$error = false;
-	if(isset($_POST['submit'])) {
-		$o_password = md5($_POST['o_password']);
-		$n_password = md5($_POST['n_password']);
-		$c_password = md5($_POST['c_n_password']);
-
-		$xml = new SimpleXMLElement('users/'.$_SESSION['username'].'.xml', 0, true);
-		if($o_password == $xml->password) {
-			if($n_password == $c_password) {
-				$xml->password = $n_password;
-				$xml->asXML('users/'.$_SESSION['username'].'.xml');
-				header("Location: logout.php");
-				die;
-			}
+<?php 
+ob_start();
+include('inc/header.php'); 
+$error = false;
+if(isset($_POST['submit'])) {
+	$o_password = md5($_POST['o_password']);
+	$n_password = md5($_POST['n_password']);
+	$c_password = md5($_POST['c_n_password']);
+	$xml = new SimpleXMLElement('users/'.$_SESSION['username'].'.xml', 0, true);
+	if($o_password == $xml->password) {
+		if($n_password == $c_password) {
+			$xml->password = $n_password;
+			$xml->asXML('users/'.$_SESSION['username'].'.xml');
+			header("Location: logout.php");
+			die;
 		}
-		$error = true;
 	}
+	$error = true;
+}
+ob_end_flush();
 ?>
-
 <?php include('inc/nav.php'); ?>
 
 <main role="main" class="container-fluid">

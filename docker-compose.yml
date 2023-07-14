@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  php_phonebook_php:
+    container_name: php_phonebook_php
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/www/html/
+    ports:
+      - 8080:80

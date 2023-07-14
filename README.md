@@ -1,6 +1,9 @@
 # php-phonebook
 A simple phone book database developed with PHP which allows a user to store their contants without a need of a database since this project is using XML files as it's database.
 
+## Demo
+To see the demo of the application please click on this [link](https://php-phonebook.mnfprofile.com).
+
 ## Getting Started
 To get the most of this project you need to clone it or make a fork of it for yourself, since this project's files are open source and I also love to contributions.
 
